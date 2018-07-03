@@ -113,6 +113,66 @@ Tips:
     ubuntu安装了ImageMagick可以使用下面的命令：convert from.gif to.png
 
 
+AnimatedVectorDrawable
+    
+    如果图片资源是矢量图，则使用AnimatedVectorDrawable
+
+```
+<!-- res/drawable/vectordrawable.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="64dp"
+    android:width="64dp"
+    android:viewportHeight="600"
+    android:viewportWidth="600">
+    <group
+        android:name="rotationGroup"
+        android:pivotX="300.0"
+        android:pivotY="300.0"
+        android:rotation="45.0" >
+        <path
+            android:name="v"
+            android:fillColor="#000000"
+            android:pathData="M300,70 l 0,-70 70,70 0,0 -70,70z" />
+    </group>
+</vector>
+```
+
+```
+<!-- res/drawable/animvectordrawable.xml -->
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+  android:drawable="@drawable/vectordrawable" >
+    <target
+        android:name="rotationGroup"
+        android:animation="@anim/rotation" />
+    <target
+        android:name="v"
+        android:animation="@anim/path_morph" />
+</animated-vector>
+```
+
+```
+<!-- res/anim/rotation.xml -->
+<objectAnimator
+    android:duration="6000"
+    android:propertyName="rotation"
+    android:valueFrom="0"
+    android:valueTo="360" />
+```
+
+```
+<!-- res/anim/path_morph.xml -->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <objectAnimator
+        android:duration="3000"
+        android:propertyName="pathData"
+        android:valueFrom="M300,70 l 0,-70 70,70 0,0   -70,70z"
+        android:valueTo="M300,70 l 0,-70 70,0  0,140 -70,0 z"
+        android:valueType="pathType" />
+</set>
+```
+
+详见 [Android官方文档|Animate drawable graphics ](https://developer.android.google.cn/guide/topics/graphics/drawable-animation)
+
 #### 补间动画（Tween Animation）
 
 ![补间动画](./res/TweenAnimation.png)
