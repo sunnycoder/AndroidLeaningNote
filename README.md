@@ -10,6 +10,8 @@ Android学习笔记
     2. 深入理解代码，不要掉进代码堆中不可自拔
     3．不重复造轮子　站在前人的肩膀上
 
+[官方开发文档| Developer Guides ](https://developer.android.google.cn/guide/)
+
 ## 传送门
 
 ### 四大组件
@@ -25,6 +27,31 @@ BoardCast详解
 ContentProvider详解
 
 
+### UI
+
+[官方文档|https://developer.android.google.cn/guide/topics/ui/](https://developer.android.google.cn/guide/topics/ui/)
+
+#### Layouts
+
+#### Notification
+
+#### Navigation
+
+
+#### Swip-to-refresh
+
+#### Toasts
+
+#### Dialog
+
+#### Menus
+
+#### 
+
+### Material design
+
+
+
 ### View
 
 * [View基础](./doc/View/View.md)
@@ -33,7 +60,7 @@ ContentProvider详解
 
 * [View的事件体系](./doc/View/View_Event_Architectures.md)
 
-* View的工作原理
+* [View的工作原理](./doc/View/View_Principle.md)
 
 ### 动画 
 
